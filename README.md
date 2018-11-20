@@ -2,16 +2,28 @@
 
 The goal of the project is to analyze the farmers market data set and come up with End to End workflow which answers some meaningful use cases
 
-## Rereate Database
+## Database
 
-There is created database with all the dataset information on `farmersmarkets.db`
+There is created database with all the dataset information on `farmersmarkets_trifacta.db`
 
 To inspect the database, run::
 
-    $ sqlite3 farmersmarkets.db
-    sqlite> SELECT * FROM `farmersmarkets` LIMIT 10;
+    $ sqlite3 farmersmarkets_trifacta.db
+    sqlite> SELECT * FROM `farmersmarkets_trifacta` LIMIT 10;
 
-To recreate the database, run::
+### Last version
+
+To recreate the database after trifacta modifications, run::
+
+    $ cat data/farmersmarkets_trifacta.struct.sql | sqlite3 farmersmarkets_trifacta.db
+    $ sqlite3 farmersmarkets_trifacta.db
+    sqlite> .mode csv
+    sqlite> .import data/farmersmarkets_trifacta.csv farmersmarkets_trifacta
+    sqlite> SELECT * FROM `farmersmarkets_trifacta` LIMIT 10;
+
+### Pristine Database
+
+To recreate the pristine database, run::
 
     $ cat data/farmersmarkets.struct.sql | sqlite3 farmersmarkets.db
     $ sqlite3 farmersmarkets.db
