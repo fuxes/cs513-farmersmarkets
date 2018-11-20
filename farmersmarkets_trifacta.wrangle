@@ -1,0 +1,6 @@
+derive type: single value: IFMISMATCHED(Facebook, ['Url'], Facebook) as: 'ismismatched_Facebook'
+set col: ismismatched_Facebook value: IFVALID($col, ['Url'], NULL())
+rename type: manual mapping: [Facebook,'Facebook_Website']
+rename type: manual mapping: [ismismatched_Facebook,'Facebook_Name']
+set col: Facebook_Website value: IFMISMATCHED($col, ['Url'], NULL())
+set col: Organic value: IF(Organic == '-', NULL(), $col)

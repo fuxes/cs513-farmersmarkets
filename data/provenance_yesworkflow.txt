@@ -1,0 +1,209 @@
+# @begin Final_Project @desc cleaning farmers market data
+
+# @in farmers_market
+# @out farmers_martket_final 
+
+# @begin import_data @desc use OpenRefine to clean data
+# @in farmers_market
+# @out MarketName
+# @out Website
+# @out Facebook
+# @out Twitter
+# @out YouTube
+# @out OtherMedia
+# @out Street
+# @out City
+# @out County
+# @out State
+# @out Zip
+# @out Season1Date
+# @out Season1Time
+# @out Season2Date
+# @out Season2Time
+# @out Season3Date
+# @out Season3Time
+# @out Season4Date
+# @out Season4Time
+# @out Season4Time
+# @out location
+# @out columns_not_needing_cleaning
+# @end import_data
+
+# @begin trim @desc trim leading and trailing white spaces
+# @in MarketName
+# @in Website
+# @in Facebook
+# @in Twitter
+# @in YouTube
+# @in OtherMedia
+# @in Street
+# @in City
+# @in County
+# @in State
+# @in Season1Date
+# @in Season1Time
+# @in Season2Date
+# @in Season2Time
+# @in Season3Date
+# @in Season3Time
+# @in Season4Date
+# @in Season4Time
+# @in Season4Time
+# @in location
+# @out MarketName_Trimmed
+# @out Website_Trimmed
+# @out Facebook_Trimmed
+# @out Twitter_Trimmed
+# @out YouTube_Trimmed
+# @out OtherMedia_Trimmed
+# @out Street_Trimmed
+# @out City_Trimmed
+# @out County_Trimmed
+# @out State_Trimmed
+# @out Season1Date_Trimmed
+# @out Season1Time_Trimmed
+# @out Season2Date_Trimmed
+# @out Season2Time_Trimmed
+# @out Season3Date_Trimmed
+# @out Season3Time_Trimmed
+# @out Season4Date_Trimmed
+# @out Season4Time_Trimmed
+# @out Season4Time_Trimmed
+# @out location_Trimmed
+# @end trim
+
+# @begin replace @desc remove extra white spaces
+# @in MarketName_Trimmed
+# @in Website_Trimmed
+# @in Facebook_Trimmed
+# @in Twitter_Trimmed
+# @in YouTube_Trimmed
+# @in OtherMedia_Trimmed
+# @in Street_Trimmed
+# @in City_Trimmed
+# @in County_Trimmed
+# @in State_Trimmed
+# @in Season1Date_Trimmed
+# @in Season1Time_Trimmed
+# @in Season2Date_Trimmed
+# @in Season2Time_Trimmed
+# @in Season3Date_Trimmed
+# @in Season3Time_Trimmed
+# @in Season4Date_Trimmed
+# @in Season4Time_Trimmed
+# @in Season4Time_Trimmed
+# @in location_Trimmed
+# @out MarketName_Cleaned
+# @out Website_Cleaned
+# @out Facebook_Cleaned
+# @out Twitter_Cleaned
+# @out YouTube_Cleaned
+# @out OtherMedia_Cleaned
+# @out Street_Cleaned
+# @out City_Cleaned
+# @out County_Cleaned
+# @out State_Cleaned
+# @out Season1Date_Cleaned
+# @out Season1Time_Cleaned
+# @out Season2Date_Cleaned
+# @out Season2Time_Cleaned
+# @out Season3Date_Cleaned
+# @out Season3Time_Cleaned
+# @out Season4Date_Cleaned
+# @out Season4Time_Cleaned
+# @out Season4Time_Cleaned
+# @out location_Cleaned
+# @end replace
+
+# @begin data_type @desc change to numerical format
+# @in Zip
+# @out Zip_Number
+# @end data_type
+
+# @begin cluster_edit @desc cluster and edit to unify naming
+# @in MarketName_Cleaned
+# @in Street_Cleaned
+# @in Season1Date_Cleaned
+# @in City_Cleaned
+# @in County_Cleaned 
+# @out MarketName_Clustered
+# @out Street_Clustered
+# @out Season1Date_Clustered
+# @out City_Clustered
+# @out County_Clustered 
+# @end cluster_edit
+
+# @begin export_data @desc export clean data out of OpenRefine
+# @in MarketName_Clustered
+# @in Website_Cleaned
+# @in Facebook_Cleaned
+# @in Twitter_Cleaned
+# @in YouTube_Cleaned
+# @in OtherMedia_Cleaned
+# @in Street_Clustered
+# @in City_Clustered
+# @in County_Clustered 
+# @in State_Cleaned
+# @in Season1Date_Clustered
+# @in Season1Time_Cleaned
+# @in Season2Date_Cleaned
+# @in Season2Time_Cleaned
+# @in Season3Date_Cleaned
+# @in Season3Time_Cleaned
+# @in Season4Date_Cleaned
+# @in Season4Time_Cleaned
+# @in Season4Time_Cleaned
+# @in location_Cleaned
+# @in Zip_Number
+# @in columns_not_needing_cleaning
+# @out farmers_market_clean
+# @end export_data
+
+# @begin double_check @desc use Trifacta to double check cleaning
+# @in farmers_market_clean
+# @out Zip_Mismatch
+# @out Website_Mismatch
+# @out Facebook_Mismatch
+# @out UpdateTime_Mismatch
+# @out Organic 
+# @out Remaining_Columns
+# @end double_check
+
+# @begin zip_fix @desc attempt to fix zip mismatches with Trifacta
+# @in Zip_Mismatch
+# @out Zip_No_Changes
+# @end zip_fix
+
+# @begin website_fix @desc attempt to fix website mismatches with Trifacta
+# @in Website_Mismatch
+# @out Website_No_Changes
+# @end website_fix
+
+# @begin facebook_fix @desc attempt to fix facebook mismatches with Trifacta
+# @in Facebook_Mismatch
+# @out Facebook_Website
+# @out Facebook_Name 
+# @end facebook_fix
+
+# @begin updatetime_fix @desc attempt to fix updatetime mismatches with Trifacta
+# @in UpdateTime_Mismatch
+# @out UpdateTime_No_Changes
+# @end updatetime_fix
+
+# @begin organic_fix @desc remove - from organic column
+# @in Organic
+# @out Organic_Clean 
+# @end organic_fix
+
+# @begin export_Trifacta @desc export data after cleaning with Trifacta
+# @in Zip_No_Changes
+# @in Website_No_Changes
+# @in Facebook_Website
+# @in Facebook_Name
+# @in UpdateTime_No_Changes
+# @in Organic_Clean
+# @in Remaining_Columns 
+# @out farmers_martket_final 
+# @end export_Trifacta
+
+# @end Final_Project
